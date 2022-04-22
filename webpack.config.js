@@ -1,7 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const isProduction = process.env.NODE_ENV === 'production';
 module.exports = {
+    mode: isProduction ? 'production' : 'development',
     mode: 'development',
     devtool: 'eval-source-map',
     entry: path.resolve(__dirname, 'src','index.jsx'),
